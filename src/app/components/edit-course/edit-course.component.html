@@ -1,1 +1,11 @@
-<p>edit-course works!</p>
+<div *ngIf="course">
+  <label>Course ID:</label> <br>
+  <input type="text" [(ngModel)]="course.id"  > <br>
+  <label>Course Name:</label> <br>
+  <input type="text" [(ngModel)]="course.coursename"  > <br>
+  <label>Course Code:</label> <br>
+  <input type="text" [(ngModel)]="course.coursecode"  > <br>
+  <label>Course Credit:</label> <br>
+  <input type="text" [(ngModel)]="course.coursecredit"  > <br>
+  <button (click)="updateCourse()">Submit</button>
+</div>
