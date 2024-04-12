@@ -4,6 +4,7 @@ import {CourseModel} from "../../models/course.model";
 import {ActivatedRoute} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-course',
@@ -15,13 +16,13 @@ import {NgIf} from "@angular/common";
 export class EditCourseComponent implements OnInit{
   course?:CourseModel;
 
-  constructor(private courseService:CourseService, private route: ActivatedRoute) {
+  constructor(private router: Router, private courseService:CourseService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.getCourse(this.route.snapshot.params['id']);
-    console.log("Student id = " + this.course?.id);
-    console.log("Student name = " + this.course?.coursename);
+    console.log("Course id = " + this.course?.id);
+    console.log("Course name = " + this.course?.courseName);
   }
 
   getCourse(id:any) {
@@ -41,7 +42,8 @@ export class EditCourseComponent implements OnInit{
           console.log(data);
         }
       );
-      console.log("Update course " + this.course?.coursename + " id = " + this.course?.id);
+      console.log("Update course " + this.course?.courseName + " id = " + this.course?.id);
     }
+    this.router.navigate(['/courses']);
   }
 }

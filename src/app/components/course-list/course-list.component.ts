@@ -11,7 +11,7 @@ import {CourseModel} from "../../models/course.model";
   templateUrl: './course-list.component.html',
   styleUrl: './course-list.component.css'
 })
-export class CourseListComponent {
+export class CourseListComponent implements OnInit{
   courseList?:CourseModel[];
 
   constructor(private courseService:CourseService) {

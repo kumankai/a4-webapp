@@ -3,10 +3,10 @@
 
   <tr *ngFor="let course of courseList">
     <th scope="row">{{course.id}}</th>
-    <td>{{course.coursename}}</td>
-    <td>{{course.coursecode}}</td>
-    <td>{{course.coursecredit}}</td>
-    <td><a  [routerLink]="['/editstudent', course.id,'edit']"
+    <td>{{course.courseName}}</td>
+    <td>{{course.courseCode}}</td>
+    <td>{{course.courseCredit}}</td>
+    <td><a  [routerLink]="['/editcourse', course.id]"
             routerLinkActive="active" ariaCurrentWhenActive="page" aria-current="page"> Edit </a></td>
   </tr>
 
