@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CourseService} from "../../services/course.service";
 import {CourseModel} from "../../models/course.model";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink, RouterLinkActive} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {NgIf} from "@angular/common";
 import { Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-edit-course',
   standalone: true,
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule, NgIf, RouterLinkActive, RouterLink],
   templateUrl: './edit-course.component.html',
   styleUrl: './edit-course.component.css'
 })
@@ -44,6 +44,5 @@ export class EditCourseComponent implements OnInit{
       );
       console.log("Update course " + this.course?.courseName + " id = " + this.course?.id);
     }
-    this.router.navigate(['/courses']);
   }
 }
