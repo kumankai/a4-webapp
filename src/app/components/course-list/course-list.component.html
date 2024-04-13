@@ -8,6 +8,8 @@
     <td>{{course.courseCredit}}</td>
     <td><a  [routerLink]="['/editcourse', course.id]"
             routerLinkActive="active" ariaCurrentWhenActive="page" aria-current="page"> Edit </a></td>
+    <td><a [routerLink]="['/courses']"
+           routerLinkActive="active" ariaCurrentWhenActive="page" aria-current="page" (click)="removeCourse(course.id)"> Delete </a></td>
   </tr>
 
   </tbody>

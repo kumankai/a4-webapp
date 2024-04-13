@@ -31,4 +31,14 @@ export class CourseListComponent implements OnInit{
         error:(e)=>console.error(e)
       });
   }
+
+  removeCourse(id: any) {
+    this.courseService.deleteCourse(id)
+      .subscribe(
+        (data) => {
+          console.log(data);
+        }
+      );
+    window.location.reload();
+  }
 }
